@@ -1,0 +1,495 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* colour storing Variable */
+:root{
+    --dark-blue:#0A1D3C;
+    --light-gray: #E5E5E5;
+    --white: #FFF;
+    --peach: #F9E3BC;
+    --dark-gray: #3E3F43;
+    --light-black: #1D1D1D;
+}
+html{
+    scroll-behavior: smooth;
+}
+nav{
+    width: 80%;
+    height:13vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+
+
+}
+.navlinks{
+    display: flex;
+}
+.section{
+    width: 100%;
+    min-height:100vh;
+}
+header{
+    width: 80%;
+    min-height: 87vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.img{
+    width: 40rem;
+}
+.logo{
+    font-size: 3.3rem;
+    color: darkblue;
+    font-family: cursive;
+}
+.navlinks li{
+    list-style: none;
+
+}
+.navlinks li  a{
+    text-decoration: none;
+    margin-left: 2.5rem;
+    color: darkgray;
+    font-size: 1rem;
+    letter-spacing: .03rem;
+    position: relative;
+}
+.headerheading{
+    font-size: 5rem;
+    position: relative;
+}
+/* PSEDUO ELEMENT */
+
+.headerheading::before{
+    content: "New";
+    position: absolute;
+    top: -60px;
+    color:darkblue ;
+    font-family: cursive; 
+}
+.product{
+    font-size: 1.9rem;
+}
+.price{
+    font-size: 1.5rem;
+    margin:1rem 0rem ;
+}
+.content{
+    margin-top:2rem ;
+}
+.primary{
+    font-size: 1.1rem;
+    border: none;
+    padding: 1rem 1.7rem;
+    text-decoration: none;
+    background: lightgray;
+    color: black ;
+    transition: transform .5s ease-in-out;
+}
+.primary:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+.sec{
+    font-size: 1 rem;
+    
+    border: none;
+    padding: 1rem 1.7rem;
+    text-decoration: none;
+    background: rgb(44, 44, 87);
+    color: white;
+    transition: transform .5s ease-in-out;
+}
+.sec:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+.navlinks li a::after ,.navlinks li .active::after {
+    content: "";
+    background-color:var(--dark-gray) ;
+    position:absolute;
+    height: .15rem;
+    width: 100%;
+    left: 0;
+    bottom:-5px ;
+    transform: scaleX(0);
+    transition: transform .5s ease;
+    transform-origin: right;
+
+}
+/*  left: 0;  for line to cover their respective anchor
+    bottom:-5px ;  and this for line to dome doum underline type
+    transform: scaleX(0); for removing line and showing when we hover it*/ 
+
+.navlinks li a:hover::after,.navlinks li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.line{
+    background-color: rgb(114, 113, 113);
+    width: 2.5rem;
+    height: .25rem;
+    margin: .38rem;
+}
+.ham{
+    cursor: pointer;
+    display: none;
+}
+
+/* MEDIAQURIES */
+
+@media screen and (max-width: 500px) {
+    .img{
+        display: none;
+    }
+    .navlinks{
+        flex-direction: column;
+        position: absolute;
+        top:0;
+        background-color: var(--light-gray);
+        width:100%;
+        height: 100%;
+        justify-content: center;
+        align-content: center;
+        right:100%;
+        z-index: 2;
+        gap: 2rem;
+        /* display: none; */
+        transition: .5s ease-in;
+    
+    }
+    .navlinks-active{
+        right: 0;
+    }
+    .navlinks li a{
+        font-size:1.3rem ;
+        color: var(--light-gray);
+        margin-left: 0;
+    }
+    .ham{
+        display: block;
+        z-index: 5rem;
+    }
+    .section .logo{
+        z-index:5 ;
+    }
+    .headerheading{
+        font-size: 4rem;
+    }
+    header{
+        justify-content:flex-start ;
+    }
+}
+/* sectionn two */
+
+.sectwo{
+    display: flex;
+    align-items: center;
+} 
+.seccontain{
+    background-color: #F9E3BC;
+    width: 100%;
+    height: 50vh;
+    transform:skewY(-6deg) ;
+}
+.two-sec {
+    width: 28rem;
+}
+.secinner{
+    transform: skewY(6deg);
+    max-width: 80%;
+    margin: 60px; ;
+    
+}
+.seccontain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec2{
+    color: var(--dark-gray);
+    font-size: 4rem;
+    text-align: center;
+}
+.secpar{
+    font-size:1rem ;
+    color: var(--dark-gray);
+    line-height: 1.7rem;
+    max-width:80% ;
+}
+.price{
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    margin: .9rem 0;
+}
+.but{
+    font-size: 1.1rem;
+    border: 1;
+    padding: 1rem 1.7rem;
+    text-decoration: none;
+    background: transparent;
+    color: black ;
+    transition: transform .5s ease;
+}
+.but:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+/* section 2 media quriies */
+@media screen and (max-width: 500px) {
+.two-sec {
+    display: none;
+}
+.sec2{
+    font-size: 2.9rem;
+
+}
+.secpar{
+    font-size: 0.93rem;
+    max-width:100% ;
+}   
+.price{
+    font-size: 1.4rem;
+}
+.but{
+    font-size:1rem ;
+    padding: 3rem 1rem;
+}
+.seccontain{
+    height: 60vh;
+}
+.secinner{
+   
+    width: 90%;
+}
+}
+/* NWE ARRIVALS */
+.more {
+    font-size: 2.5rem;
+    margin-top: 90px;
+    margin-bottom: 3rem;
+    text-align: center;
+    
+}
+.card-container{
+display: flex;
+justify-content: center;
+align-items: center;
+
+text-align: center;
+gap:3rem
+}
+.card{
+    background-color: var(--light-gray);
+    padding: 2rem;
+}
+.cardimg{
+    width: 20rem;
+}
+.prc{
+    font-size:1.2rem ;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+@media screen and (max-width: 500px) {
+    .cardimg{
+        width:17rem;
+    }
+}
+
+/* OFFERRR */
+.sec4{
+    display: flex;
+    align-items: center;
+}
+.sec4cont{
+    background-image: url("watch.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width:100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.offer{
+    font-size: 4rem;
+    color: var(--peach);
+    font-family: cursive;
+    text-transform: uppercase;
+}
+.offer2{
+    font-size: 4rem;
+    color: white;
+    margin-bottom:1rem ;
+}
+.bton{
+    font-size: 1.1rem;
+    border: none;
+    padding: 1rem 1.7rem;
+    text-decoration: none;
+    background: var(--peach);
+    color: black ;
+    transition: transform .5s ease-in;
+}
+.bton:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.sec4cont::before{
+    content: "";
+    background:rgba(0, 0, 0 ,544) ;
+    position: absolute;
+    insert:0;
+}
+.sec4cont .content{
+    z-index: 5;
+}
+@media screen and (max-width: 500px) {
+    .offer{
+        font-size:2.8rem ;
+ 
+    }
+    .offer2{
+        font-size: 3.3rem;
+    }
+    .bton{
+        font-size: 1rem;
+    }
+} 
+
+/* COLLECTIONN */
+.gridcard{
+    
+    width: 60%;
+    height: 80vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns:repeat(3 , 1fr) ;
+    grid-template-rows: repeat(2 ,1fr);
+    gap:1.2rem;
+    grid-auto-rows: 15rem;
+    
+}
+.gridcardd{
+    background-color:var(--light-gray);
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+/* nth child  one means   first box and so on*/
+.gridcardd:nth-child(1){
+    grid-row: 1/4;
+    background-image: url("rado\ watch.jpg");
+
+}
+.gridcardd:nth-child(2){
+    
+    background-image: url("fitron\ watch.jpg");
+}
+.gridcardd:nth-child(3){
+    grid-row: 1/3;
+    background-image: url("geneve\ watch.jpg");
+}
+.gridcardd:nth-child(4){
+    grid-row: 3/4;
+    background-image: url("tissot\ watch.jpg");
+}
+.gridcardd:nth-child(5){
+    background-image: url("cartier\ watch.jpg");
+
+}
+.gridcardd:nth-child(6){
+    background-image: url("omega\ watch.jpg");
+
+}
+.gridcardd::before {
+    content:"";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.544) ;
+    inset: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 1s ease-in-out;
+}
+.gridcardd:hover::before{
+    transform: scaleX(1);  
+    transform-origin: left;  
+}
+.gridcardd::after{
+    content: attr(collection);
+    position: absolute;
+    text-transform: uppercase;
+    background-color: var(--peach);
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 1.7rem;
+    font-size: 1.1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+}
+.gridcardd:hover::after{
+    opacity: 1;
+    visibility: visible;
+}
+/* .footer{
+    background-color: var(--light-black) ;
+    height: 20vh;
+    width: 100%;
+    margin-top: 5rem;
+}
+.foot{
+    color: white;
+    font-size: 1.5rem;
+} */
+.footer{
+    background-color: black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    width: 100%;
+    margin-top: 5rem;
+}
+.foot{
+    color: white;
+    font-size:1.5rem ;
+    text-align: center;
+    height: 10vh;
+    margin-top: 3rem;
+    background-color: var(--light-black);
+    display: flex;
+    justify-content: center;
+    
+}
+@media screen and (max-width: 500px) {
+    .gridcard{
+        grid-template-columns: repeat(2 , 1fr);
+        grid-template-rows: repeat(3 , 1fr);
+        width: 90%;
+    }
+    .gridcardd:nth-child(1),.gridcardd:nth-child(3){
+        grid-row: 1/2;
+
+    }
+}
